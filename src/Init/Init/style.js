@@ -182,6 +182,9 @@ const styles = StyleSheet.create({
         zIndex: 0,
         
         
+    },
+    seta:{
+        width: 90
     }
 
 })
