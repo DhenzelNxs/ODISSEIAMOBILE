@@ -1,56 +1,66 @@
 import React from 'react';
-import { Text, View, ImageBackground, Dimensions, StyleSheet, Image } from 'react-native';
+import { Text, View, ImageBackground, Dimensions, StyleSheet, Image, FlatList } from 'react-native';
 import Carousel from 'react-native-snap-carousel';
 
 import styles from '../Init/style';
 
 const carouselItems = [
   {
+    id:0,
     nome:'Dhenzel Lima Ribeiro',
     imgUrl: require('odisseiamob/assets/icon.png'),
     funcao: 'Densenvolvedor'
   },
   {
+    id:1,
     nome:'Dhenzel Lima Ribeiro',
     imgUrl: require('odisseiamob/assets/icon.png'),
     funcao: 'Densenvolvedor'
   },
   {
+    id:2,
     nome:'Dhenzel Lima Ribeiro',
     imgUrl: require('odisseiamob/assets/icon.png'),
     funcao: 'Densenvolvedor'
   },
   {
+    id:3,
     nome:'Dhenzel Lima Ribeiro',
     imgUrl: require('odisseiamob/assets/icon.png'),
     funcao: 'Densenvolvedor'
   },
   {
+    id:4,
     nome:'Dhenzel Lima Ribeiro',
     imgUrl: require('odisseiamob/assets/icon.png'),
     funcao: 'Densenvolvedor'
   },
   {
+    id:5,
     nome:'Dhenzel Lima Ribeiro',
     imgUrl: require('odisseiamob/assets/icon.png'),
     funcao: 'Densenvolvedor'
   },
   {
+    id:6,
     nome:'Dhenzel Lima Ribeiro',
     imgUrl: require('odisseiamob/assets/icon.png'),
     funcao: 'Densenvolvedor'
   },
   {
+    id:7,
     nome:'Dhenzel Lima Ribeiro',
     imgUrl: require('odisseiamob/assets/icon.png'),
     funcao: 'Densenvolvedor'
   },
   {
+    id:8,
     nome:'Dhenzel Lima Ribeiro',
     imgUrl: require('odisseiamob/assets/icon.png'),
     funcao: 'Densenvolvedor'
   },
   {
+    id:9,
     nome:'Dhenzel Lima Ribeiro',
     imgUrl: require('odisseiamob/assets/icon.png'),
     funcao: 'Densenvolvedor'
@@ -84,12 +94,11 @@ function Creditos() {
     >
       <View style={styles.OptionsAll}>
         <Text style={styles.TitleTextCreditos}>CRÉDITOS</Text>
-        <Carousel
+        <FlatList
           data={carouselItems}
           renderItem={({ item }) => <CarouselCardItem item={item} />}
-          sliderWidth={SLIDER_WIDTH}
-          itemWidth={ITEM_WIDTH}
-          useScrollView={true}
+          keyExtractor={item => String(item.id) }
+          horizontal={true}
         />
       </View>
     </ImageBackground>
