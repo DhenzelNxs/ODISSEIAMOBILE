@@ -148,6 +148,7 @@ const styles = StyleSheet.create({
         fontSize: 20,
         fontStyle: "italic"
     },
+
     optionsContainer:{
         flexDirection: "row",
         display: "flex",
@@ -166,8 +167,22 @@ const styles = StyleSheet.create({
     },
     image: {
         flex: 1,
-        justifyContent: 'center',    
+        justifyContent: 'center', 
+        alignItems: "center"   
     },
+    imageTabuleiro: {
+        width: 650,
+        left: 20,
+        zIndex: 1,
+        resizeMode: "center"
+    },
+    imgDado: {
+        width: 80,
+        right: 30,
+        zIndex: 0,
+        
+        
+    }
 
 })
 
