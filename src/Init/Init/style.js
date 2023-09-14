@@ -172,7 +172,7 @@ const styles = StyleSheet.create({
     },
     imageTabuleiro: {
         width: 650,
-        left: 20,
+        left: 30,
         zIndex: 1,
         resizeMode: "center"
     },
@@ -185,6 +185,12 @@ const styles = StyleSheet.create({
     },
     seta:{
         width: 90
+    },
+    Naves1:{
+        width: 40,
+        right: 635,
+        top: 150,
+        
     }
 
 })

@@ -9,18 +9,30 @@ function Multiplayer1() {
     startAnimation();
   }, []);
 
+  const animationDado = () => {
+    Animated.loop(
+      Animated.sequence([
+        Animated.timing(positionX, {
+          toValue:15,
+          duration: 1000,
+          useNativeDriver: false
+        })
+      ])
+    )
+  }
+
   const startAnimation = () => {
     Animated.loop(
       Animated.sequence([
         Animated.timing(positionX, {
-          toValue: 30, // Valor para mover a imagem para a direita
-          duration: 1000, // Duração do movimento em milissegundos
-          useNativeDriver: false, // Importante definir como false para animações de layout
+          toValue: 30, 
+          duration: 1000, 
+          useNativeDriver: false, 
         }),
         Animated.timing(positionX, {
-          toValue: 0, // Valor para mover a imagem de volta para a esquerda (volta ao valor inicial)
-          duration: 1000, // Duração do movimento em milissegundos
-          useNativeDriver: false, // Importante definir como false para animações de layout
+          toValue: 0, 
+          duration: 1000, 
+          useNativeDriver: false, 
         }),
       ])
     ).start();
@@ -63,6 +75,13 @@ function Multiplayer1() {
             style={styles.imgDado}
           />
         </TouchableOpacity>
+
+        <Image 
+        source={require("odisseiamob/assets/Nave1.png")}
+        resizeMode="contain"
+        style={styles.Naves1}
+        />
+
       </View>
     </ImageBackground>
   );

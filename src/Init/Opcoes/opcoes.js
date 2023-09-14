@@ -5,7 +5,6 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 
 function Opcoes() {
 
-    const [usuario, setUsuario] = useState("Usuario123");
     const [inputValue, setInputValue] = useState(""); // Track input value
     const [showSaveButton, setShowSaveButton] = useState(false); // Control button visibility
     const [stateFocus, setStateFocus] = useState(false)
@@ -89,7 +88,7 @@ function Opcoes() {
                         style={styles.imgRede}
                     />
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => Linking.openURL("https://github.com/DhenzelNexxus")}>
+                <TouchableOpacity onPress={() => Linking.openURL("https://github.com/DhenzelNexxus/ODISSEIAMOBILE/tree/master")}>
                     <Image 
                         source={require("odisseiamob/assets/github.png")} 
                         style={styles.imgRedeGithub}

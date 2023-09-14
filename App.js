@@ -8,6 +8,8 @@ import Jogar from './src/Init/Jogar/jogar';
 import Opcoes from './src/Init/Opcoes/opcoes';
 import Creditos from './src/Init/Creditos/creditos';
 import Multiplayer1 from './src/Init/Jogar/multiplayer/multiplayer1';
+import Multiplayer2 from './src/Init/Jogar/multiplayer/multiplayer2';
+import Multiplayer3 from './src/Init/Jogar/multiplayer/multiplayer3';
 
 const image = { uri: 'https://images2.alphacoders.com/805/thumbbig-805172.webp' };
 const Stack = createNativeStackNavigator();
@@ -65,6 +67,28 @@ const App = () => (
 <Stack.Screen 
           name="multiplayer1" 
           component={Multiplayer1}  
+          options={{
+            headerShown: false,
+            headerBackVisible: true, // Esconde o botão de voltar
+            headerTitle: '', // Remove o título do cabeçalho />
+            headerStyle: {
+              height: 10, // Defina a altura desejada
+            },
+}}/>
+<Stack.Screen 
+          name="multiplayer2" 
+          component={Multiplayer2}  
+          options={{
+            headerShown: false,
+            headerBackVisible: true, // Esconde o botão de voltar
+            headerTitle: '', // Remove o título do cabeçalho />
+            headerStyle: {
+              height: 10, // Defina a altura desejada
+            },
+}}/>
+<Stack.Screen 
+          name="multiplayer3" 
+          component={Multiplayer3}  
           options={{
             headerShown: false,
             headerBackVisible: true, // Esconde o botão de voltar

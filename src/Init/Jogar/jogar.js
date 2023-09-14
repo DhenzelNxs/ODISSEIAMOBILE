@@ -13,6 +13,12 @@ function Jogar(){
     const handleMultiplyer1Press = () => {
       navigation.navigate("multiplayer1"); // Navega para o componente Jogar
     };
+    const handleMultiplyer2Press = () => {
+        navigation.navigate("multiplayer2"); // Navega para o componente Jogar
+      };
+      const handleMultiplyer3Press = () => {
+        navigation.navigate("multiplayer3"); // Navega para o componente Jogar
+      };
 
     return(
         <ImageBackground
@@ -29,10 +35,10 @@ function Jogar(){
             <TouchableOpacity style={styles.opcaoEscolha} onPress={handleMultiplyer1Press}>
                 <Text style={styles.textEscolha}>2 Jogadores</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.opcaoEscolha}>
+            <TouchableOpacity style={styles.opcaoEscolha} onPress={handleMultiplyer2Press}>
                 <Text style={styles.textEscolha}>3 Jogadores</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.opcaoEscolha}>
+            <TouchableOpacity style={styles.opcaoEscolha} onPress={handleMultiplyer3Press}>
                 <Text style={styles.textEscolha}>4 Jogadores</Text>
             </TouchableOpacity>
             </View>
