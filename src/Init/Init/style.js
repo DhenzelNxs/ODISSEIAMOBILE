@@ -172,26 +172,112 @@ const styles = StyleSheet.create({
     },
     imageTabuleiro: {
         width: 650,
-        left: 30,
+        left: 40,
         zIndex: 1,
         resizeMode: "center"
     },
     imgDado: {
         width: 80,
-        right: 30,
+        right: 20,
         zIndex: 0,
         
         
     },
     seta:{
-        width: 90
+        width: 90,
+        
     },
     Naves1:{
         width: 40,
-        right: 635,
+        right: 625,
         top: 150,
         
-    }
+        
+    },
+    cardPergunta:{
+        justifyContent: "center",
+        alignContent: "center",
+        alignItems: "center",
+        
+    },
+    modalContainer: {
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: "rgba(0, 0, 0, 0.7)",
+      },
+      
+      card: {
+        backgroundColor: "white",
+        padding: 20,
+        borderRadius: 10,
+        elevation: 5,
+        width: "80%",
+        paddingLeft: 50,
+        paddingRight: 50,
+        borderWidth: 1,
+        borderColor: "#0c9fc4"
+      },
+      
+      questionText: {
+        fontSize: 18,
+        marginBottom: 10,
+      },
+      
+      optionButton: {
+        backgroundColor: "#ccc",
+        padding: 10,
+        borderRadius: 5,
+        marginVertical: 5,
+        alignItems: "center",
+        borderWidth: 1,
+        borderColor: "#0c9fc4"
+      },
+      
+      optionText: {
+        fontSize: 16,
+      },
+      resultMessageContainer: {
+        position: "absolute",
+        
+        left: 0,
+        right: 0,
+        alignItems: "center",
+        justifyContent: "center",
+        zIndex: 999, // Coloca a mensagem na frente de todos os outros elementos
+        
+      },
+      
+      resultMessageText: {
+        fontSize: 44,
+        fontWeight: "bold",
+        color: "white", // Cor da mensagem de resultado
+        backgroundColor: "rgba(0, 0, 0, 0.7)",
+        padding: 10,
+        borderRadius: 15,
+        borderWidth: 1,
+        borderColor: "#0c9fc4"
+      },
+
+      randomNumberContainer: {
+        position: "absolute",
+        left: 0,
+        right: 0,
+        alignItems: "center",
+        justifyContent: "center",
+        zIndex: 999, // Coloca o número sorteado na frente de todos os outros elementos
+      },
+      
+      randomNumberText: {
+        fontSize: 148, // Tamanho do número sorteado
+        fontWeight: "bold",
+        color: "white", // Cor do número sorteado
+        padding: 10,
+        borderRadius: 5,
+      },
+      
+      
+      
 
 })
 
