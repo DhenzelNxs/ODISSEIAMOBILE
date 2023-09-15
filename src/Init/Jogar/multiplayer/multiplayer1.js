@@ -200,10 +200,10 @@ function Multiplayer1() {
               />
 
             <TextInput
-                placeholder="Nome do Jogador 1"
+                placeholder="Nome do Jogador 2"
                 style={[styles.input, {marginBottom: 40}]}
-                value={player1Name}
-                onChangeText={(text) => setPlayer1Name(text)}
+                value={player2Name}
+                onChangeText={(text) => setPlayer2Name(text)}
                 placeholderTextColor={"#fff"}
               />
             </View>
