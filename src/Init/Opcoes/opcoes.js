@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage"; 
 
 function Opcoes() {
-
+    const [usuario, setUsuario] = useState("teste123")
     const [inputValue, setInputValue] = useState(""); // Track input value
     const [showSaveButton, setShowSaveButton] = useState(false); // Control button visibility
     const [stateFocus, setStateFocus] = useState(false)
@@ -22,12 +22,12 @@ function Opcoes() {
           setUsuario(inputValue);
       
           // Save the username to AsyncStorage
-          await AsyncStorage.setItem("username", inputValue);
+          await AsyncStorage.setItem("UsuarioNome", inputValue);
       
           setShowSaveButton(false); // Hide the button
           setStateFocus(false)
         } catch (error) {
-          console.error("Error saving username:", error);
+          console.error("Erro ao salvar o nome de usuario:", error);
         }
       };
       
@@ -35,12 +35,12 @@ function Opcoes() {
 
     const loadSavedUsername = async () => {
         try {
-          const savedUsername = await AsyncStorage.getItem("username");
+          const savedUsername = await AsyncStorage.getItem("UsuarioNome");
           if (savedUsername !== null) {
             setInputValue(savedUsername);
           }
         } catch (error) {
-          console.error("Error loading username:", error);
+          console.error("Error ao carregar o nome de usuario:", error);
         }
       };
       
