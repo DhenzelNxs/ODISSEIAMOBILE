@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { View, ImageBackground, Image, TouchableOpacity, Animated, Text, Modal, Button, StatusBar } from "react-native";
+import { View, ImageBackground, Image, TouchableOpacity, Animated, Text, Modal, TextInput, Alert } from "react-native";
 
 import styles from "../../Init/style";
 
@@ -27,6 +27,22 @@ function Multiplayer1() {
   const [showRandomNumber, setShowRandomNumber] = useState(false);
   const [randomNumber, setRandomNumber] = useState(0);
 
+  const [player1Name, setPlayer1Name] = useState("");
+  const [player2Name, setPlayer2Name] = useState("");
+  const [showInitialScreen, setShowInitialScreen] = useState(true);
+
+
+  function handleStartGame() {
+    // Verifique se os nomes dos jogadores foram inseridos
+    if (player1Name && player2Name) {
+      // Inicie o jogo e oculte a tela inicial
+      setShowInitialScreen(false);
+    } else {
+      // Exiba uma mensagem de erro se os nomes não foram inseridos
+      Alert.alert("Nomes dos jogadores", "Por favor, insira os nomes dos jogadores.");
+    }
+  }
+  
 
 
   useEffect(() => {
@@ -148,8 +164,65 @@ function Multiplayer1() {
     ).start();
   };
 
-  return (
-    <ImageBackground
+
+  if (showInitialScreen) {
+    return (
+      
+        <ImageBackground
+          source={{
+            uri: 'https://images2.alphacoders.com/805/thumbbig-805172.webp',
+          }}
+          resizeMode="cover"
+          style={styles.image}
+        >
+          <View style={styles.initialScreenContainer}>
+            <View style={{flexDirection: "column"}}>
+            <Image
+              source={require("odisseiamob/assets/Nave1.png")}
+              resizeMode="contain"
+              style={styles.Naves1initial}
+            />
+           
+            <Image
+              source={require("odisseiamob/assets/pato2.png")}
+              resizeMode="contain"
+              style={styles.Naves2initial}
+            />
+            
+            </View>
+            <View style={{flexDirection: "column"}}>
+            <TextInput
+                placeholder="Nome do Jogador 1"
+                style={[styles.input, {marginBottom: 40}]}
+                value={player1Name}
+                onChangeText={(text) => setPlayer1Name(text)}
+                placeholderTextColor={"#fff"}
+              />
+
+            <TextInput
+                placeholder="Nome do Jogador 1"
+                style={[styles.input, {marginBottom: 40}]}
+                value={player1Name}
+                onChangeText={(text) => setPlayer1Name(text)}
+                placeholderTextColor={"#fff"}
+              />
+            </View>
+           
+
+          </View>
+
+          <TouchableOpacity
+              style={styles.startButton}
+              onPress={() => handleStartGame()}
+            >
+              <Text style={styles.startButtonText}>Iniciar Jogo</Text>
+            </TouchableOpacity>
+        </ImageBackground>
+      );
+      
+  } else {
+    return (
+      <ImageBackground
       source={{ uri: 'https://images2.alphacoders.com/805/thumbbig-805172.webp' }}
       resizeMode="cover"
       style={styles.image}
@@ -189,7 +262,7 @@ function Multiplayer1() {
       {/* Adicione o Modal para exibir o card */}
       <Modal
         visible={showCard}
-        animationType="slide"
+        animationType="fade"
         transparent={true}
         
       >
@@ -220,10 +293,14 @@ function Multiplayer1() {
     )}
 
   {showRandomNumber && (
+   
     <View style={styles.randomNumberContainer}>
+      <Text style={{color: "#fff", fontSize: 48}}>Vez do Jogador {jogadorAtual}</Text>
       <Text style={styles.randomNumberText}>{randomNumber}</Text>
     </View>
+    
   )}
+  
 
 
 
@@ -244,7 +321,9 @@ function Multiplayer1() {
 
       </View>
     </ImageBackground>
-  );
-}
+    );
+  }
+}  
+  
 
-export default Multiplayer1;
+export default Multiplayer1

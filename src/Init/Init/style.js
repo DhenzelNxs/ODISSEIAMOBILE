@@ -260,12 +260,14 @@ const styles = StyleSheet.create({
       },
 
       randomNumberContainer: {
+        flex: 1,
         position: "absolute",
         left: 0,
         right: 0,
         alignItems: "center",
         justifyContent: "center",
         zIndex: 999, // Coloca o número sorteado na frente de todos os outros elementos
+        backgroundColor: "rgba(0, 0, 0, 0.7)",
       },
       
       randomNumberText: {
@@ -275,6 +277,57 @@ const styles = StyleSheet.create({
         padding: 10,
         borderRadius: 5,
       },
+      
+        image: {
+          flex: 1,
+          justifyContent: "center",
+          alignItems: "center",
+        },
+        initialScreenContainer: {
+          flex: 1,
+          justifyContent: "center",
+          alignItems: "center",
+          flexDirection: "row"
+        },
+        Naves1initial: {
+          width: 100,
+          height: 100,
+          bottom: 20
+        },
+        Naves2initial: {
+          width: 100,
+          height: 100,
+          bottom: 30
+        },
+        inputContainer: {
+          marginBottom: 20,
+          
+          
+        },
+        input: {
+          width: 250,
+          height: 40,
+          borderWidth: 1,
+          borderColor: "#ccc",
+          borderRadius: 5,
+          paddingHorizontal: 10,
+          marginBottom: 10,
+          
+        },
+        startButton: {
+          backgroundColor: "#007bff",
+          padding: 10,
+          borderRadius: 5,
+          bottom: 70
+        },
+        startButtonText: {
+          color: "#fff",
+          fontSize: 16,
+        },
+        // Adicione outros estilos conforme necessário para o jogo em si
+      
+
+      
       
       
       
